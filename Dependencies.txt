@@ -64,3 +64,26 @@ Brillio_Portal_Server: https://BrillioDI@dev.azure.com/BrillioDI/Technology%20In
 
 add crontab in shell script
 crontab -l | { cat; echo "* * * * * cd /var/www/API/PA%20Inventory%20Server && python3 email_to_db.py > out.txt"; } | crontab -
+
+To install pyodbc
+//try removing pyodbc==4.0.30 from requirements2x.txt 
+pip3 install pyodbc
+sudo yum install python37-devel
+sudo yum install python3-devel.x86_64
+curl https://packages.microsoft.com/config/rhel/6/prod.repo > /etc/yum.repos.d/mssql-release.repo
+sudo yum remove unixODBC-utf16 unixODBC-utf16-devel
+sudo ACCEPT_EULA=Y yum install msodbcsql17
+sudo ACCEPT_EULA=Y yum install mssql-tools
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+sudo yum install unixODBC-devel
+
+sudo yum install msodbcsql17 mssql-tools
+yum install libgcc
+
+sudo yum install libevent-devel
+sudo easy_install gevent
+sudo yum -y install gcc
+
+yum install gcc-c++
