@@ -1,7 +1,21 @@
+git commands below
+
+git clone "url" //first clone it with url
+move to the folder
+
+git status
+git add .
+git commit -m "first commit"
+git push
+
+To run bootstrap.sh commands given below
+chmod +x bootstrap.sh
+./bootstrap.sh
+
 pip freeze >requirements2x.txt  //to get all the installed pip libraries
 pip3 freeze >requirements3x.txt  //to get all the installed pip3 libraries
 
-cp *.* /var/www/API/Brillio_Portal_Server/
+cp *.* /var/www/API/Brillio_Portal_Server/  //to copy all to a specific folder
 
 gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app //to run gunicorn
 
@@ -18,25 +32,35 @@ Dependencies for Coats Backup Dashboard
 Dependencies for Brillio DI Portal
 - navigate to cd www/html/Portal and run "nohup ng serve --host 0.0.0.0 &" navigate to cd var/www/API/CBD and run "gunicorn -w 4 -b 0.0.0.0:80 flask_server:app"
 
+
 sudo yum install python3
 sudo yum install python3-pip
 sudo yum install git
 sudo yum install python-pip
 sudo yum install python
 
- 
-
 pip install -r requirements2x.txt
 python3 -m pip install requirements3x.txt
 pip3 install -r requirements3x.txt
 
+PA Inventory:
 
-git commands below
+PA Inventory Server:
+https://dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/PA%20Inventory%20Server
+PA Inventory Client:
+https://dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/PA%20Inventory%20Client
 
-git clone "url" //first clone it with url
-move to the folder
+Coats BM:
 
-git status
-git add .
-git commit -m "first commit"
-git push
+Coats_BM_Server: https://dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/Coats_BM_Server 
+Coats_BM_Client: https://BrillioDI@dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/Coats_BM_Client
+
+
+Brillio Portal:
+
+Brillio_Portal_Client: https://BrillioDI@dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/Brillio_Portal_Client 
+Brillio_Portal_Server: https://BrillioDI@dev.azure.com/BrillioDI/Technology%20Innovation%20Council/_git/Brillio_Portal_Server
+
+
+add crontab in shell script
+(crontab -l 2>/dev/null; echo "*/5 * * * * /path/to/job -with args") | crontab -
