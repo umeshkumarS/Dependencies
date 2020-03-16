@@ -66,8 +66,9 @@ add crontab in shell script
 crontab -l | { cat; echo "* * * * * cd /var/www/API/PA%20Inventory%20Server && python3 email_to_db.py > out.txt"; } | crontab -
 
 To install pyodbc
-//try removing pyodbc==4.0.30 from requirements2x.txt 
+//try removing pyodbc==4.0.30 from requirements2x.txt or add in requirements2x.txt
 pip3 install pyodbc
+pip install pyodbc
 sudo yum install python37-devel
 sudo yum install python3-devel.x86_64
 curl https://packages.microsoft.com/config/rhel/6/prod.repo > /etc/yum.repos.d/mssql-release.repo
