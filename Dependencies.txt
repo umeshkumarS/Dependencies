@@ -1,0 +1,31 @@
+pip freeze >requirements2x.txt  //to get all the installed pip libraries
+pip3 freeze >requirements3x.txt  //to get all the installed pip3 libraries
+
+cp *.* /var/www/API/Brillio_Portal_Server/
+
+gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app //to run gunicorn
+
+nohup ng serve --host 0.0.0.0 & //to start ng serve continiously
+
+crontab -e // inside it contains --  
+* * * * * cd /var/www/API/Coats_BM_Server/email_to_db && python3 runner.py > out.txt
+
+crontab -l //to list cron jobs
+
+Dependencies for Coats Backup Dashboard
+- navigate to cd var/www/API/CBD and run "gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app" and also have a cronjob
+
+Dependencies for Brillio DI Portal
+- navigate to cd www/html/Portal and run "nohup ng serve --host 0.0.0.0 &" navigate to cd var/www/API/CBD and run "gunicorn -w 4 -b 0.0.0.0:80 flask_server:app"
+
+sudo yum install python3
+sudo yum install python3-pip
+sudo yum install git
+sudo yum install python-pip
+sudo yum install python
+
+ 
+
+pip install -r requirements2x.txt
+python3 -m pip install requirements3x.txt
+pip3 install -r requirements3x.txt
