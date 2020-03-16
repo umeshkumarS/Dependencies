@@ -19,7 +19,7 @@ cp *.* /var/www/API/Brillio_Portal_Server/  //to copy all to a specific folder
 
 gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app //to run gunicorn
 
-nohup ng serve --host 0.0.0.0 & //to start ng serve continiously
+nohup ng serve --host 0.0.0.0 & //to start server(angular) without interruption
 
 crontab -e // inside it contains --  
 * * * * * cd /var/www/API/Coats_BM_Server/email_to_db && python3 runner.py > out.txt
@@ -63,4 +63,4 @@ Brillio_Portal_Server: https://BrillioDI@dev.azure.com/BrillioDI/Technology%20In
 
 
 add crontab in shell script
-(crontab -l 2>/dev/null; echo "*/5 * * * * /path/to/job -with args") | crontab -
+crontab -l | { cat; echo "* * * * * cd /var/www/API/PA%20Inventory%20Server && python3 email_to_db.py > out.txt"; } | crontab -
