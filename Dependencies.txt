@@ -29,3 +29,14 @@ sudo yum install python
 pip install -r requirements2x.txt
 python3 -m pip install requirements3x.txt
 pip3 install -r requirements3x.txt
+
+
+git commands below
+
+git clone "url" //first clone it with url
+move to the folder
+
+git status
+git add .
+git commit -m "first commit"
+git push
