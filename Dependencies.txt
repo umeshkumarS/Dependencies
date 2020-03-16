@@ -87,3 +87,39 @@ sudo easy_install gevent
 sudo yum -y install gcc
 
 yum install gcc-c++
+//
+
+Coats BM bootstrap.sh below
+//
+sudo yum install python3
+sudo yum install python3-pip
+sudo yum install git
+sudo yum install python-pip
+sudo yum install python
+
+sudo yum install python37-devel
+sudo yum install python3-devel.x86_64
+curl https://packages.microsoft.com/config/rhel/6/prod.repo > /etc/yum.repos.d/mssql-release.repo
+sudo yum remove unixODBC-utf16 unixODBC-utf16-devel
+sudo ACCEPT_EULA=Y yum install msodbcsql17
+sudo ACCEPT_EULA=Y yum install mssql-tools
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+sudo yum install unixODBC-devel
+
+sudo yum install msodbcsql17 mssql-tools
+yum install libgcc
+
+sudo yum install libevent-devel
+sudo easy_install gevent
+sudo yum -y install gcc
+
+yum install gcc-c++
+
+pip install -r requirements2x.txt
+python3 -m pip install requirements3x.txt
+pip3 install -r requirements3x.txt
+crontab -l | { cat; echo "* * * * * cd /var/www/API/Coats_BM_Server/email_to_db && python3 runner.py > out.txt"; } | crontab -
+gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app
+//
