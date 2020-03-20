@@ -124,3 +124,14 @@ pip3 install -r requirements3x.txt
 crontab -l | { cat; echo "* * * * * cd /var/www/API/Coats_BM_Server/email_to_db && python3 runner.py > out.txt"; } | crontab -
 gunicorn -w 4 -b 0.0.0.0:8080 flask_server:app
 //
+
+
+To install nodejs on amazon linux
+//
+curl --silent --location https://rpm.nodesource.com/setup_12.x | bash -
+sudo yum install -y nodejs
+
+npm install -g @angular/cli@6.0.8
+//
+
+sudo lsof -i :80 //to list the processes running with this port
