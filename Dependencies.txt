@@ -135,3 +135,9 @@ npm install -g @angular/cli@6.0.8
 //
 
 sudo lsof -i :80 //to list the processes running with this port
+
+//installing angular material for angular 6
+
+npm install @angular/material@6.4.7
+npm install @angular/cdk@6.4.7
+ng add @angular/material
